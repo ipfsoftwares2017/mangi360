@@ -3,7 +3,7 @@
     <string name="welcome_msg">Welcome!</string>
     <string name="sign_out">Sign Out</string>
     <string name="contacts_permission_rationale">Access to account information is required to sign in.</string>
-    <string name="invite_menu_label">Invite</string>
+    <string name="checkout_menu_label">Checkout</string>
     <string name="invitation_message">Please join me for fast and easy biashara</string>
     <string name="invitation_cta">Call to action</string>
     <string name="invitation_title">Mangi360 Invite</string>

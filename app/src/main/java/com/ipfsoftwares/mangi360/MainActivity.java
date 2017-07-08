@@ -7,20 +7,17 @@ import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.*;
-import android.text.Editable;
-import android.text.InputFilter;
-import android.text.TextWatcher;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.*;
-import android.widget.SearchView;
-
-import com.android.internal.util.Predicate;
-import com.bumptech.glide.Glide;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.appinvite.AppInviteInvitation;
 import com.google.android.gms.auth.api.Auth;
@@ -28,18 +25,12 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.crash.FirebaseCrash;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.ipfsoftwares.mangi360.adapter.ProductAdapter;
 import com.ipfsoftwares.mangi360.model.Product;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity
         implements GoogleApiClient.OnConnectionFailedListener {
@@ -248,8 +239,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
-			case R.id.invite_menu:
-				sendInvitation();
+			case R.id.checkout_menu:
+			    checkOutProducts();
 				return true;
 			case R.id.sign_out_menu:
 				mFirebaseAuth.signOut();
@@ -286,6 +277,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void checkOutProducts() {
+        Toast.makeText(this, "Checkout products of DOLLARS worth.", Toast.LENGTH_LONG).show();
 
 	    // TODO: generate QRCode
 
