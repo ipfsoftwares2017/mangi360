@@ -285,6 +285,13 @@ public class MainActivity extends AppCompatActivity
     	throw new NullPointerException("Whhhopssies! Something went wrong.");
     }
 
+    private void checkOutProducts() {
+
+	    // TODO: generate QRCode
+
+        // TODO: start Qr activity
+    }
+
     private void sendInvitation() {
 		Intent intent = new AppInviteInvitation.IntentBuilder(getString(R.string.invitation_title))
 			.setMessage(getString(R.string.invitation_message))
