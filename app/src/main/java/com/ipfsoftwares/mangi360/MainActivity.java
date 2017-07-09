@@ -43,10 +43,9 @@ public class MainActivity extends AppCompatActivity
 
         public MessageViewHolder(View v) {
             super(v);
-            messageTextView = (TextView) itemView.findViewById(R.id.messageTextView);
-            messageImageView = (ImageView) itemView.findViewById(R.id.messageImageView);
-            messengerTextView = (TextView) itemView.findViewById(R.id.messengerTextView);
-            messengerImageView = (CircleImageView) itemView.findViewById(R.id.messengerImageView);
+            messageTextView = (TextView) itemView.findViewById(R.id.message_text_view);
+            messengerTextView = (TextView) itemView.findViewById(R.id.account_holder_text_view);
+            messengerImageView = (CircleImageView) itemView.findViewById(R.id.account_holder_image_view);
         }
     }
 
@@ -119,7 +118,7 @@ public class MainActivity extends AppCompatActivity
 //        mFirebaseReference = FirebaseDatabase.getInstance().getReference();
 //        mFirebaseAdapter = new FirebaseRecyclerAdapter<ProductDAO, MessageViewHolder>(
 //        		ProductDAO.class,
-//        		R.layout.item_message,
+//        		R.layout.item_history,
 //        		MessageViewHolder.class,
 //        		mFirebaseReference.child(MESSAGES_CHILD)) {
 //
@@ -243,6 +242,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.user_profile_menu:
                 showUserProfile();
                 return true;
+            case R.id.history_menu:
+                showTransactionHistory();
+                return true;
 			case R.id.checkout_menu:
 			    checkOutProducts();
 				return true;
@@ -255,6 +257,11 @@ public class MainActivity extends AppCompatActivity
 			default:
 				return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void showTransactionHistory() {
+	    Intent intent = new Intent(this, TransactionActivity.class);
+	    startActivity(intent);
     }
 
     @Override

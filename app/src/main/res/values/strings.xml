@@ -14,8 +14,10 @@
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
     <string name="title_activity_checkout">Checking Out</string>
     <string name="title_activity_profile">Your Profile</string>
+    <string name="title_activity_transactions">Your Transactions</string>
     <string name="avatar_content_description">User Avatar</string>
     <string name="update_profile">Update profile</string>
     <string name="phone_edit_text_hint">Your phone</string>
     <string name="username_edit_text_hint">Your name</string>
+    <string name="transaction_menu">Your Transactions</string>
 </resources>

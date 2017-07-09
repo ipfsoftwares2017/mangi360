@@ -19,11 +19,27 @@
         <activity
                 android:name=".CheckOutActivity"
                 android:label="@string/title_activity_checkout"
-                android:parentActivityName=".MainActivity"/>
+                android:parentActivityName=".MainActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.ipfsoftwares.mangi360.MainActivity"/>
+        </activity>
         <activity
                 android:name=".ProfileActivity"
                 android:label="@string/title_activity_profile"
-                android:parentActivityName=".MainActivity"/>
+                android:parentActivityName=".MainActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.ipfsoftwares.mangi360.MainActivity"/>
+        </activity>
+        <activity
+                android:name=".TransactionActivity"
+                android:label="@string/title_activity_transactions"
+                android:parentActivityName=".MainActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.ipfsoftwares.mangi360.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>
