@@ -3,15 +3,14 @@
     <string name="welcome_msg">Welcome!</string>
     <string name="sign_out">Sign Out</string>
     <string name="contacts_permission_rationale">Access to account information is required to sign in.</string>
-    <string name="checkout_menu_label">Checkout</string>
+    <string name="checkout_menu_label">Check Out</string>
     <string name="invitation_message">Please join me for fast and easy biashara</string>
     <string name="invitation_cta">Call to action</string>
     <string name="invitation_title">Mangi360 Invite</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
     <string name="fresh_config">Fresh Config</string>
-    <string name="cause_crash">Cause crash</string>
+    <string name="cause_crash">Cause Crash</string>
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="title_activity_check_out">CheckOutActivity</string>
-    <string name="title_activity_checkout">Checkout Products</string>
+    <string name="title_activity_checkout">Checking Out</string>
 </resources>
