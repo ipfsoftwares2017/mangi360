@@ -7,6 +7,11 @@ public class Transaction {
     private String mMessage;
     private String mPhotoUrl;
 
+    public Transaction(String displayName, String message) {
+        this.mDisplayName = displayName;
+        this.mMessage = message;
+    }
+
     public String getDisplayName() {
         return this.mDisplayName;
     }
