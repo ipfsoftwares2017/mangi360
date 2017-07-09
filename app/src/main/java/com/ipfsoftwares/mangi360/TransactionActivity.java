@@ -12,6 +12,8 @@ import com.ipfsoftwares.mangi360.model.Transaction;
 import java.util.ArrayList;
 
 public class TransactionActivity extends AppCompatActivity {
+    private ArrayList<Transaction> mTransactions;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,15 +27,17 @@ public class TransactionActivity extends AppCompatActivity {
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
         mLinearLayoutManager.setStackFromEnd(false);
 
-        TransactionAdapter mTransactionAdapter = new TransactionAdapter(this, getTransactions());
+        mockTransactions();
+
+        TransactionAdapter mTransactionAdapter = new TransactionAdapter(this, mTransactions);
         mTransactionRecyclerView.setLayoutManager(mLinearLayoutManager);
         mTransactionRecyclerView.setAdapter(mTransactionAdapter);
     }
 
-    private ArrayList<Transaction> getTransactions() {
-        ArrayList<Transaction> transactions = new ArrayList<>();
-        transactions.add(new Transaction("688089928", "Bought goods worth TZS.100 at 2017-07-09T08:10:08.989Z"));
-        transactions.add(new Transaction("688089699", "Bought goods worth TZS.100 at 2017-07-09T08:11:56.684Z"));
-        return transactions;
+    private void mockTransactions() {
+        mTransactions = new ArrayList<>();
+        mTransactions.add(new Transaction("688089928", "Bought goods worth TZS.100 at 2017-07-09T08:10:08.989Z"));
+        mTransactions.add(new Transaction("688089699", "Bought goods worth TZS.100 at 2017-07-09T08:11:56.684Z"));
+        mTransactions.add(new Transaction("688089928", "Bought goods worth TZS.100 at 2017-07-09T08:22:09.456Z"));
     }
 }
