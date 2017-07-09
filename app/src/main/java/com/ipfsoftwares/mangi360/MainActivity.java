@@ -239,6 +239,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
+            case R.id.user_profile_menu:
+                showUserProfile();
+                return true;
 			case R.id.checkout_menu:
 			    checkOutProducts();
 				return true;
@@ -280,6 +283,11 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, CheckOutActivity.class);
         intent.putExtra(CheckOutActivity.EXTRA_CHECK_OUT_PRODUCTS, "String representation of products");
         startActivity(intent);
+    }
+
+    private void showUserProfile() {
+	    Intent intent = new Intent(this, ProfileActivity.class);
+	    startActivity(intent);
     }
 
     private void sendInvitation() {

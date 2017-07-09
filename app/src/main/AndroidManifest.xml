@@ -19,8 +19,11 @@
         <activity
                 android:name=".CheckOutActivity"
                 android:label="@string/title_activity_checkout"
-                android:parentActivityName=".MainActivity">
-        </activity>
+                android:parentActivityName=".MainActivity"/>
+        <activity
+                android:name=".ProfileActivity"
+                android:label="@string/title_activity_profile"
+                android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>
