@@ -277,11 +277,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void checkOutProducts() {
-        Toast.makeText(this, "Checkout products of DOLLARS worth.", Toast.LENGTH_LONG).show();
-
-	    // TODO: generate QRCode
-
-        // TODO: start Qr activity
+        Intent intent = new Intent(this, CheckOutActivity.class);
+        intent.putExtra(CheckOutActivity.EXTRA_CHECK_OUT_PRODUCTS, "String representation of products");
+        startActivity(intent);
     }
 
     private void sendInvitation() {
