@@ -23,4 +23,12 @@ public interface ProductColumn {
 	@NotNull
 	String PRICE = "price";
 
+	@DataType(DataType.Type.INTEGER)
+	@NotNull
+	String STATUS = "status";
+
+	@DataType(DataType.Type.INTEGER)
+	@NotNull
+	String QUANTITY = "quantity";
+
 }

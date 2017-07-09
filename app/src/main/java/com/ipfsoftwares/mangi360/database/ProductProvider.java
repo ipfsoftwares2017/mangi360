@@ -4,6 +4,7 @@ import android.net.Uri;
 
 import net.simonvt.schematic.annotation.ContentProvider;
 import net.simonvt.schematic.annotation.ContentUri;
+import net.simonvt.schematic.annotation.InexactContentUri;
 import net.simonvt.schematic.annotation.TableEndpoint;
 
 /**
@@ -33,10 +34,18 @@ public final class ProductProvider {
 
 		@ContentUri(path = PATH.PRODUCTS,
 		type = "vnd.android.cursor.dir/product",
-		defaultSort = ProductColumn.NAME + "ASC")
-		public static final Uri PRODUCTS = buildUri(PATH.PRODUCTS);
+		defaultSort = ProductColumn.NAME + " DESC ")
+		public static final Uri CONTENT_URI = buildUri(PATH.PRODUCTS);
 
 
-
+		@InexactContentUri(path = PATH.PRODUCTS + "/$",
+			name = "PRODUCT_SEARCH",
+			type = "vd.android.cursor.dir/product",
+			whereColumn = ProductColumn.NAME + " LIKE % ? %",
+			pathSegment = 1)
+		public static final Uri withSearchString(String searchString){
+			return buildUri(PATH.PRODUCTS,searchString);
+		}
 	}
+
 }

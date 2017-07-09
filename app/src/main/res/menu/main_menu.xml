@@ -19,9 +19,9 @@
         app:showAsAction="never"/>
     <item
         android:id="@+id/checkout_menu"
-        android:title="@string/checkout_menu_label"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/crash_menu"
-        android:title="@string/cause_crash"/>
+        android:title="@string/checkout_menu_label"/>
+
+    <item android:id="@+id/action_listing"
+          android:title="@string/my_listing"
+          app:showAsAction="never"/>
 </menu>

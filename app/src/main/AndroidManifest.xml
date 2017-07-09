@@ -40,6 +40,21 @@
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="com.ipfsoftwares.mangi360.MainActivity"/>
         </activity>
+		<activity
+			android:name=".ListingActivity"
+			android:label="@string/title_activity_listing"
+			android:parentActivityName=".MainActivity"
+			android:screenOrientation="portrait"
+			android:theme="@style/AppTheme">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="com.ipfsoftwares.mangi360.MainActivity" />
+		</activity>
+
+		<provider
+			android:authorities="com.ipfsoftwares.mangi360.ProductProvider"
+			android:name="com.ipfsoftwares.mangi360.database.generated.ProductProvider"
+			android:exported="false"/>
     </application>
 
 </manifest>
