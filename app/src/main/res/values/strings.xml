@@ -12,4 +12,22 @@
     <string name="fresh_config">Fresh Config</string>
     <string name="cause_crash">Cause crash</string>
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+	<string name="title_activity_listing">Listing</string>
+	<string name="profile">Profile</string>
+	<string name="my_listing">My Listing</string>
+	<string name="add_product">Add Product</string>
+	<string name="add_product_desc">Enter product name and amount in the fields provided to add new product to your listing</string>
+	<string name="add">ADD</string>
+	<string name="cancel">CANCEL</string>
+	<string name="delete">DELETE</string>
+	<string name="edit_delete_product">Edit/Delete Product</string>
+	<string name="edit">EDIT</string>
+	<string name="edit_desc">Edit product name and amount in the fields provided to add new product to your listing Or hit delete to remove a product</string>
+	<string name="update_success">Detail Updated successfully</string>
+	<string name="delete_success">Detail deleted successfully</string>
+	<string name="empty_listing">You don\'t have any product tap + sign to add new products to your listing</string>
+	<string name="empty_main">You don\'t have any product, to add product please visit Listing menu in your Menu</string>
+	<string name="remove">Remove</string>
+	<string name="remove_from_cat">Remove From Cat</string>
+	<string name="no_product">No product found for</string>
 </resources>

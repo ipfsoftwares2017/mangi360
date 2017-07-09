@@ -1,5 +1,10 @@
 package com.ipfsoftwares.mangi360.model;
 
+import android.database.Cursor;
+import android.util.Log;
+
+import com.ipfsoftwares.mangi360.database.ProductColumn;
+
 /**
  * Created by twalipo on 7/8/17.
  */
@@ -7,14 +12,24 @@ package com.ipfsoftwares.mangi360.model;
 public class Product {
 	String name;
 	double price;
+	int quantity;
 	int id;
 	boolean status;
 
-	public Product(String name,double price, int id ,boolean status ){
+	public Product(String name,double price, int id ){
 		this.name = name;
 		this.price = price;
 		this.id = id;
-		this.status = status;
+		this.status = false;
+		quantity = 0;
+	}
+
+	public Product(Cursor data) {
+		this.name = data.getString(data.getColumnIndex(ProductColumn.NAME));
+		this.price = Double.parseDouble(data.getString(data.getColumnIndex(ProductColumn.PRICE)));
+		this.id = data.getInt(data.getColumnIndex(ProductColumn._ID));
+		this.status = data.getInt(data.getColumnIndex(ProductColumn.STATUS)) == 1;
+		quantity = data.getInt(data.getColumnIndex(ProductColumn.QUANTITY));
 	}
 
 	public String getName() {
@@ -37,6 +52,10 @@ public class Product {
 		this.price = price;
 	}
 
+	public double getTotalAmount(){
+		return price * quantity;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -51,5 +70,13 @@ public class Product {
 
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 }
