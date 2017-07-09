@@ -6,19 +6,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.ImageView;
+import com.bumptech.glide.Glide;
 
 public class ProfileActivity extends AppCompatActivity {
     private static final String TAG = "ProfileActivity";
-    public static final String TRANSACTIONS_CHILD = "transactions";
-    private static final int REQUEST_INVITE = 1;
-    private static final int REQUEST_IMAGE = 2;
     private static final String LOADING_IMAGE_URL = "https://www.google.com/images/spin-32.gif";
-    public static final int DEFAULT_MSG_LENGTH_LIMIT = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        EditText displayNameEditText = (EditText) findViewById(R.id.username_edit_text);
+        EditText phoneNumberEditText = (EditText) findViewById(R.id.phone_edit_text);
+        ImageView avatarImageView = (ImageView) findViewById(R.id.avatar_image_view);
+
+        Bundle extras = getIntent().getExtras();
+        displayNameEditText.setText(extras.getString("displayName"));
+        phoneNumberEditText.setText(extras.getString("phoneNumber"));
+
+        Glide.with(ProfileActivity.this)
+                .load(extras.getString("photoUrl"))
+                .into(avatarImageView);
     }
 
     @Override

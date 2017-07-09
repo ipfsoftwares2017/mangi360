@@ -58,8 +58,9 @@ public class MainActivity extends AppCompatActivity
     public static final int DEFAULT_MSG_LENGTH_LIMIT = 10;
     public static final String ANONYMOUS = "anonymous";
     private static final String MESSAGE_SENT_EVENT = "message_sent";
-    private String mUsername;
+    private String mDisplayName;
     private String mPhotoUrl;
+    private String mPhoneNumber;
     private SharedPreferences mSharedPreferences;
     private GoogleApiClient mGoogleApiClient;
     private static final String MESSAGE_URL = "http://friendlychat.firebase.google.com/message/";
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         // Set default username is anonymous.
-        mUsername = ANONYMOUS;
+        mDisplayName = ANONYMOUS;
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity
         	finish();
         	return;
         } else {
-        	mUsername = mFirebaseUser.getDisplayName();
+        	mDisplayName = mFirebaseUser.getDisplayName();
 
         	if(mFirebaseUser.getPhotoUrl() != null) {
         		mPhotoUrl = mFirebaseUser.getPhotoUrl().toString();
@@ -248,7 +249,7 @@ public class MainActivity extends AppCompatActivity
 			case R.id.sign_out_menu:
 				mFirebaseAuth.signOut();
 				Auth.GoogleSignInApi.signOut(mGoogleApiClient);
-				mUsername = ANONYMOUS;
+				mDisplayName = ANONYMOUS;
 				startActivity(new Intent(this, SignInActivity.class));
 				return true;
 			default:
@@ -287,6 +288,9 @@ public class MainActivity extends AppCompatActivity
 
     private void showUserProfile() {
 	    Intent intent = new Intent(this, ProfileActivity.class);
+	    intent.putExtra("displayName", mDisplayName);
+	    intent.putExtra("phoneNumber", mPhoneNumber);
+        intent.putExtra("photoUrl", mPhotoUrl);
 	    startActivity(intent);
     }
 
